@@ -7,19 +7,22 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+
+static const char fg[]              = "#ffffff";
+static const char nord_fg[]         = "#D8DEE9";
+static const char one_bg[]          = "#1C1B1D";
+static const char nord_bg[]         = "#2E3440";
+static const char nord_blue[]       = "#81A1C1";
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+     /*               fg         bg         border   */
+    [SchemeNorm] = { nord_fg,   nord_bg,   nord_bg   },
+    [SchemeSel]  = { nord_bg,   nord_blue, nord_blue },
 };
 
+
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "東", "南", "西", "北" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -56,8 +59,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", nord_bg, "-nf", nord_fg, "-sb", nord_blue, "-sf", nord_bg, NULL };
+
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
