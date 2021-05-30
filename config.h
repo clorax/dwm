@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -11,18 +11,18 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "FiraCode Nerd Font:size=11" }; //{ "monospace:size=10" };
+static const char dmenufont[]       = "FiraCode Nerd Font:size=11"; // "monospace:size=10";
 static const char fg[]              = "#ffffff";
 static const char nord_fg[]         = "#D8DEE9";
-static const char one_bg[]          = "#1C1B1D";
+static const char one_bg[]          = "#4c566a"; // "#1C1B1D";
 static const char nord_bg[]         = "#2E3440";
-static const char nord_blue[]       = "#81A1C1";
+static const char nord_blue[]       = "#eceff4"; // "#81A1C1";
 
 static const char *colors[][3]      = {
      /*               fg         bg         border   */
-    [SchemeNorm] = { nord_fg,   nord_bg,   nord_bg   },
-    [SchemeSel]  = { nord_bg,   nord_blue, nord_blue },
+    [SchemeNorm] = { nord_fg,   nord_bg,   one_bg   },
+    [SchemeSel]  = { one_bg,   nord_blue, nord_blue },
 };
 
 /* tagging */
